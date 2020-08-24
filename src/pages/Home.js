@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import { Typography, Box } from "@material-ui/core";
 import TweetField from "../components/Home/TweetField"
+import Title from "../components/Home/Title"
 
 export default class Home extends Component {
   render() {
@@ -14,15 +15,11 @@ export default class Home extends Component {
             container
             direction="row"
             justify="center"
-            alignItems="center"
+            alignItems="flex-start"
             spacing={3}
           >
             <Grid item xs={12}>
-              <Box m={2}>
-                <Typography variant="h3" gutterBottom>
-                  Sentagalog Sentimentizer
-                </Typography>
-              </Box>
+              <Title />
             </Grid>
             <TweetField />
           </Grid>

@@ -23,10 +23,11 @@ export default function MultilineTextFields() {
   return (
     <React.Fragment>
       
-        <Grid item xs={12} sm={8}>
+        <Grid item xs={12} sm={10}>
         <TextField
           id="filled-multiline-flexible"
-          label="Multiline"
+          label="Tweet Statement"
+          placeholder="I feel extremely happy!"
           multiline
           rows={4}
           variant="outlined"
@@ -34,9 +35,9 @@ export default function MultilineTextFields() {
           fullWidth
         />
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={2}>
           <Button type="submit" fullWidth variant="contained" color="primary">
-            Analyze
+            Get Sentiment
           </Button>
         </Grid>
       
