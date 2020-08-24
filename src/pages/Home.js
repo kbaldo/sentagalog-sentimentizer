@@ -3,6 +3,7 @@ import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import { Typography, Box } from "@material-ui/core";
+import TweetField from "../components/Home/TweetField"
 
 export default class Home extends Component {
   render() {
@@ -22,6 +23,9 @@ export default class Home extends Component {
                   Sentagalog Sentimentizer
                 </Typography>
               </Box>
+            </Grid>
+            <Grid item xs={12}>
+                <TweetField />
             </Grid>
           </Grid>
         </Container>
