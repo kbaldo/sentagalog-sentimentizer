@@ -1,8 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Container from "@material-ui/core/Container";
-import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import { Typography, Box } from "@material-ui/core";
 import TweetField from "../components/Home/TweetField"
 import Title from "../components/Home/Title"
 
