@@ -14,7 +14,7 @@ export default function AboutUs() {
   return (
     <React.Fragment>
       <div className={classes.contents}>
-        <Typography variant="h3" gutterBottom>
+        <Typography variant="h3" gutterBottom color="primary">
           Sentagalog Sentimentizer
         </Typography>
         <Typography variant="body1">

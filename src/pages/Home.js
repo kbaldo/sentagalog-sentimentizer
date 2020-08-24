@@ -10,7 +10,7 @@ export default class Home extends Component {
   render() {
     return (
       <Fragment>
-        <Container>
+        <Container maxWidth="md">
           <Grid
             container
             direction="row"
