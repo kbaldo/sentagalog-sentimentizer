@@ -16,9 +16,9 @@ import { CssBaseline } from '@material-ui/core';
           contrastText: '#fff',
         },
         secondary: {
-          light: '#d05d73',
-          main: '#9b2c48',
-          dark: '#680021',
+          light: '#f15d75',
+          main: '#ba274a',
+          dark: '#840023',
           contrastText: '#fff',
         },
         warning: {
