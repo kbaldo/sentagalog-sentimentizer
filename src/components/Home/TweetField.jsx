@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { Button, Grid } from "@material-ui/core";
+import AssessmentIcon from '@material-ui/icons/Assessment';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,7 +24,7 @@ export default function MultilineTextFields() {
   return (
     <React.Fragment>
       
-        <Grid item xs={12} sm={10}>
+        <Grid item xs={12} sm={9}>
         <TextField
           id="filled-multiline-flexible"
           label="Tweet Statement"
@@ -35,8 +36,8 @@ export default function MultilineTextFields() {
           fullWidth
         />
         </Grid>
-        <Grid item xs={12} sm={2}>
-          <Button type="submit" fullWidth variant="contained" color="primary">
+        <Grid item xs={12} sm={3}>
+          <Button type="submit" fullWidth variant="contained" color="primary" startIcon={<AssessmentIcon />}>
             Get Sentiment
           </Button>
         </Grid>
