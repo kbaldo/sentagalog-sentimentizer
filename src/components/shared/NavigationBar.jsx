@@ -30,14 +30,14 @@ export default function NavigationBar() {
             alignItems="center"
           >
             <Grid item>
-              <IconButton
+              {/* <IconButton
                 edge="start"
                 className={classes.menuButton}
                 color="inherit"
                 aria-label="menu"
               >
                 <MenuIcon />
-              </IconButton>
+              </IconButton> */}
             </Grid>
             <Grid item>
               <Button color="inherit">About the project</Button>
