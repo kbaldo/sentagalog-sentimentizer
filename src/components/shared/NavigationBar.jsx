@@ -22,7 +22,7 @@ export default function NavigationBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      {/*<AppBar position="static"> */}
         <Toolbar>
           <Grid
             justify="space-between" // Add it here :)
@@ -46,7 +46,7 @@ export default function NavigationBar() {
             </Grid>
           </Grid>
         </Toolbar>
-      </AppBar>
+      {/*</AppBar>*/}
     </div>
   );
 }
