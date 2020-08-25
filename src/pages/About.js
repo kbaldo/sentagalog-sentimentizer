@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { Typography } from "@material-ui/core";
+import Proponents from "../components/About/Proponents"
 
 export default class Home extends Component {
   render() {
@@ -46,6 +47,7 @@ export default class Home extends Component {
               <Typography variant="h4" gutterBottom color="textPrimary">
                 Proponents
               </Typography>
+              <Proponents />
             </Grid>
           </Grid>
         </Container>
