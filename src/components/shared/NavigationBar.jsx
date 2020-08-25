@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 import { Box } from "@material-ui/core";
 import NavigationDrawer from "./NavigationDrawer";
 import About from "./About";
+import { Link, useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,8 +33,7 @@ export default function NavigationBar() {
         <Box display={{ xs: "block", md: "none" }}><NavigationDrawer /></Box>
         <div className={classes.toolbarButtons}>
           <Box display={{ xs: "none", md: "block" }}>
-            <About />
-            <Button color="inherit">Proponents</Button>
+            <Button color="inherit" component={Link} to={"/about"}>About the Project</Button>
             <Button color="inherit">Download Paper</Button>
           </Box>
         </div>

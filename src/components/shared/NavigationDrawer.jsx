@@ -9,7 +9,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import { IconButton, Container } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu"
+import MenuIcon from "@material-ui/icons/Menu";
+import About from "./About";
 
 const useStyles = makeStyles({
   list: {
@@ -47,33 +48,28 @@ export default function NavigationDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["About The Project", "Proponents", "Download Paper"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        <About />
       </List>
     </div>
   );
 
   return (
     <div>
-        <Container disableGutters={true}>
-      {["top"].map((anchor) => (
-        <React.Fragment key={"top"}>
-          <IconButton onClick={toggleDrawer("top", true)} edge="start"><MenuIcon /></IconButton>
-          <Drawer
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-          >
-            {list(anchor)}
-          </Drawer>
-        </React.Fragment>
-      ))}
+      <Container disableGutters={true}>
+        {["top"].map((anchor) => (
+          <React.Fragment key={"top"}>
+            <IconButton onClick={toggleDrawer("top", true)} edge="start">
+              <MenuIcon />
+            </IconButton>
+            <Drawer
+              anchor={anchor}
+              open={state[anchor]}
+              onClose={toggleDrawer(anchor, false)}
+            >
+              {list(anchor)}
+            </Drawer>
+          </React.Fragment>
+        ))}
       </Container>
     </div>
   );
