@@ -4,8 +4,7 @@ import { Grid } from "@material-ui/core";
 import GetSentiment from "./GetSentiment";
 
 export default function TweetField() {
-  const [//value, 
-    setValue] = React.useState("Controlled");
+  const [value, setValue] = React.useState("Controlled");
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -26,7 +25,7 @@ export default function TweetField() {
         />
         </Grid>
         <Grid item xs={12} sm={3}>
-          <GetSentiment />
+          <GetSentiment text={value}/>
         </Grid>
       
       </React.Fragment>
