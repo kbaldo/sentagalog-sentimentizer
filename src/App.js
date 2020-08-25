@@ -10,8 +10,6 @@ function App() {
     <div className="App">
       <Router path="/">
         <NavigationBar />
-      
-      
       <Switch>
         <Route exact path={"/"} render={(routerProps) => (<Home routerProps={routerProps} />)}/>
         <Route exact path={"/about"} render={(routerProps) => (<About routerProps={routerProps} />)}/>
