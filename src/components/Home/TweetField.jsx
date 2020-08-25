@@ -1,7 +1,6 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
-import { Button, Grid } from "@material-ui/core";
-import AssessmentIcon from '@material-ui/icons/Assessment';
+import { Grid } from "@material-ui/core";
 import GetSentiment from "./GetSentiment";
 
 export default function TweetField() {
