@@ -6,9 +6,11 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
+import InfoIcon from "@material-ui/icons/Info";
+import CloudDownloadIcon from "@material-ui/icons/CloudDownload";
 import { IconButton, Container } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   list: {
@@ -46,11 +48,19 @@ export default function NavigationDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
+        <Link to="/about" style={{ textDecoration: "none", color: "inherit" }}>
+          <ListItem button>
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText>About the Project</ListItemText>
+          </ListItem>
+        </Link>
         <ListItem button>
           <ListItemIcon>
-            <InboxIcon />
+            <CloudDownloadIcon />
           </ListItemIcon>
-          <ListItemText>About</ListItemText>
+          <ListItemText>Download Paper</ListItemText>
         </ListItem>
       </List>
     </div>
