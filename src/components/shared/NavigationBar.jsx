@@ -7,6 +7,8 @@ import Button from "@material-ui/core/Button";
 //import IconButton from "@material-ui/core/IconButton";
 //import MenuIcon from "@material-ui/icons/Menu";
 import { Grid, Box } from "@material-ui/core";
+import NavigationDrawer from "./NavigationDrawer";
+import MenuIcon from "@material-ui/icons/Menu"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,7 +29,7 @@ export default function NavigationBar() {
     <div className={classes.root}>
       {/*<AppBar position="static"> */}
       <Toolbar>
-        <Box display={{ xs: "block", md: "none" }}>button</Box>
+        <Box display={{ xs: "block", md: "none" }}><NavigationDrawer /></Box>
         <div className={classes.toolbarButtons}>
           <Box display={{ xs: "none", md: "block" }}>
             <Button color="inherit">About the project</Button>
