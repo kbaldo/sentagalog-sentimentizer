@@ -2,8 +2,9 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { Button, Grid } from "@material-ui/core";
 import AssessmentIcon from '@material-ui/icons/Assessment';
+import GetSentiment from "./GetSentiment";
 
-export default function MultilineTextFields() {
+export default function TweetField() {
   const [//value, 
     setValue] = React.useState("Controlled");
 
@@ -13,7 +14,6 @@ export default function MultilineTextFields() {
 
   return (
     <React.Fragment>
-      
         <Grid item xs={12} sm={9}>
         <TextField
           id="filled-multiline-flexible"
@@ -27,9 +27,7 @@ export default function MultilineTextFields() {
         />
         </Grid>
         <Grid item xs={12} sm={3}>
-          <Button type="submit" fullWidth variant="contained" color="primary" startIcon={<AssessmentIcon />}>
-            Get Sentiment
-          </Button>
+          <GetSentiment />
         </Grid>
       
       </React.Fragment>
