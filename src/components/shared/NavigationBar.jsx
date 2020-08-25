@@ -15,6 +15,18 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
+  sectionDesktop: {
+    display: "none",
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
+    },
+  },
+  sectionMobile: {
+    display: "flex",
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
+  },
 }));
 
 export default function NavigationBar() {
@@ -23,29 +35,32 @@ export default function NavigationBar() {
   return (
     <div className={classes.root}>
       {/*<AppBar position="static"> */}
-        <Toolbar>
+      <Toolbar>
+        <div className={classes.sectionDesktop}>
           <Grid
-            justify="space-between" // Add it here :)
+            direction="row"
+            justify="flex-end" // Add it here :)
             container
             alignItems="center"
           >
-            <Grid item>
-              {/* <IconButton
+            {/* <Grid item>
+               <IconButton
                 edge="start"
                 className={classes.menuButton}
                 color="inherit"
                 aria-label="menu"
               >
                 <MenuIcon />
-              </IconButton> */}
-            </Grid>
+              </IconButton> 
+            </Grid>*/}
             <Grid item>
               <Button color="inherit">About the project</Button>
               <Button color="inherit">Proponents</Button>
               <Button color="inherit">Download Paper</Button>
             </Grid>
           </Grid>
-        </Toolbar>
+        </div>
+      </Toolbar>
       {/*</AppBar>*/}
     </div>
   );
