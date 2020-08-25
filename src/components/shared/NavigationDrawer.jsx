@@ -7,10 +7,8 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import { IconButton, Container } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import About from "./About";
 
 const useStyles = makeStyles({
   list: {
@@ -48,7 +46,12 @@ export default function NavigationDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <About />
+        <ListItem button>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <ListItemText>About</ListItemText>
+        </ListItem>
       </List>
     </div>
   );

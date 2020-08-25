@@ -1,8 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import TweetField from "../components/Home/TweetField";
-import Title from "../components/Home/Title";
 import { Typography } from "@material-ui/core";
 
 export default class Home extends Component {

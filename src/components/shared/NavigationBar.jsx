@@ -8,8 +8,7 @@ import Button from "@material-ui/core/Button";
 //import MenuIcon from "@material-ui/icons/Menu";
 import { Box } from "@material-ui/core";
 import NavigationDrawer from "./NavigationDrawer";
-import About from "./About";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
