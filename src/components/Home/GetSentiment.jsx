@@ -8,6 +8,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import { Paper } from "@material-ui/core";
 import AssessmentIcon from "@material-ui/icons/Assessment"
+import AxiosInterface from '../../helpers/AxiosInterface'; //Added Import for AxiosInterface
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -17,19 +18,57 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function GetSentiment() {
+export default function GetSentiment(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [responseType, setResponseType] = React.useState("indeterminate");
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleClickOpen = () => {
-    setOpen(true);
+	//Logic on Button Click (Sending Request). Loading icon???
+	onSubmit();
   };
 
   const handleClose = () => {
     setOpen(false);
   };
+
+	//API Interaction Code [S]
+
+	const onSuccess = (responseData) => {
+		//Logic for this component should the request be successful. Breadcrumbss????
+		console.log("Response : ", responseData);
+		setResponseType(responseData.title);
+		setOpen(true);
+	}
+
+	const onFailure = (errorData) => {
+		//Logic for this component should the request be a failure. More breadcrumbs???
+		console.log("Error : ", errorData);
+	}
+
+	const onRequest = () => {
+		//Logic for this component while request is ongoing. Loading icon???
+  }
+
+	//Modify to suit Ian's server
+	const payload = {
+		title: 'text',
+		text: props.text,
+	}
+
+	const callbacks = {
+		success : onSuccess,
+		failure : onFailure,
+		request : onRequest
+	}
+
+	const onSubmit = () => {
+		AxiosInterface.SendAsPost(payload, callbacks);
+	}
+
+	//API Interaction Code [E]
 
   return (
     <div>
@@ -50,10 +89,10 @@ export default function GetSentiment() {
         aria-labelledby="responsive-dialog-title"
       >
         <DialogTitle id="responsive-dialog-title">
-          {"The text uses positive language!"}
+          {"The text uses " + responseType + " language!"}
         </DialogTitle>
         <DialogContent>
-          <Paper variant="outlined" square><div className={classes.contents}>seeing mina laughing her arse off is so wholesome.. happy mina is the best mina</div></Paper>
+		  <Paper variant="outlined" square><div className={classes.contents}>{props.text}</div></Paper>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary" autoFocus>
