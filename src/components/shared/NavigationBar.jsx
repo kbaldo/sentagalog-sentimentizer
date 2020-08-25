@@ -8,6 +8,7 @@ import Button from "@material-ui/core/Button";
 //import MenuIcon from "@material-ui/icons/Menu";
 import { Box } from "@material-ui/core";
 import NavigationDrawer from "./NavigationDrawer";
+import About from "./About";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,7 +32,7 @@ export default function NavigationBar() {
         <Box display={{ xs: "block", md: "none" }}><NavigationDrawer /></Box>
         <div className={classes.toolbarButtons}>
           <Box display={{ xs: "none", md: "block" }}>
-            <Button color="inherit">About the project</Button>
+            <About />
             <Button color="inherit">Proponents</Button>
             <Button color="inherit">Download Paper</Button>
           </Box>
