@@ -6,7 +6,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 //import IconButton from "@material-ui/core/IconButton";
 //import MenuIcon from "@material-ui/icons/Menu";
-import { Grid } from "@material-ui/core";
+import { Grid, Box } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,17 +15,8 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
-  sectionDesktop: {
-    display: "none",
-    [theme.breakpoints.up("md")]: {
-      display: "flex",
-    },
-  },
-  sectionMobile: {
-    display: "flex",
-    [theme.breakpoints.up("md")]: {
-      display: "none",
-    },
+  toolbarButtons: {
+    marginLeft: "auto",
   },
 }));
 
@@ -36,26 +27,14 @@ export default function NavigationBar() {
     <div className={classes.root}>
       {/*<AppBar position="static"> */}
       <Toolbar>
-        <Grid
-          direction="row"
-          justify="flex-end" // Add it here :)
-          container
-          alignItems="space-between"
-        >
-          <div className={classes.sectionDesktop}>
-            <Grid item>
-              <Button color="inherit">About the project</Button>
-              <Button color="inherit">Proponents</Button>
-              <Button color="inherit">Download Paper</Button>
-            </Grid>
-          </div>
-          {/*<div className={classes.sectionMobile}>
-            <Grid item>
-              <Button color="inherit">About the project</Button>
-            </Grid>
-          </div>
-          */}
-        </Grid>
+        <Box display={{ xs: "block", md: "none" }}>button</Box>
+        <div className={classes.toolbarButtons}>
+          <Box display={{ xs: "none", md: "block" }}>
+            <Button color="inherit">About the project</Button>
+            <Button color="inherit">Proponents</Button>
+            <Button color="inherit">Download Paper</Button>
+          </Box>
+        </div>
       </Toolbar>
       {/*</AppBar>*/}
     </div>
