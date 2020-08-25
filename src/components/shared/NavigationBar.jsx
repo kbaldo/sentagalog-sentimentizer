@@ -36,30 +36,26 @@ export default function NavigationBar() {
     <div className={classes.root}>
       {/*<AppBar position="static"> */}
       <Toolbar>
-        <div className={classes.sectionDesktop}>
-          <Grid
-            direction="row"
-            justify="flex-end" // Add it here :)
-            container
-            alignItems="center"
-          >
-            {/* <Grid item>
-               <IconButton
-                edge="start"
-                className={classes.menuButton}
-                color="inherit"
-                aria-label="menu"
-              >
-                <MenuIcon />
-              </IconButton> 
-            </Grid>*/}
+        <Grid
+          direction="row"
+          justify="flex-end" // Add it here :)
+          container
+          alignItems="space-between"
+        >
+          <div className={classes.sectionDesktop}>
             <Grid item>
               <Button color="inherit">About the project</Button>
               <Button color="inherit">Proponents</Button>
               <Button color="inherit">Download Paper</Button>
             </Grid>
-          </Grid>
-        </div>
+          </div>
+          {/*<div className={classes.sectionMobile}>
+            <Grid item>
+              <Button color="inherit">About the project</Button>
+            </Grid>
+          </div>
+          */}
+        </Grid>
       </Toolbar>
       {/*</AppBar>*/}
     </div>
