@@ -35,7 +35,7 @@ const proponents = [
     "Kevin Kyle Hendrick Baldo",
     "BS Computer Science",
     "Ateneo De Naga University",
-    "#",
+    "https://lh3.googleusercontent.com/YQxCISrmOhRU6YT4hs7RJnSJY67hdzPnjCedAXrKaVrHp7SIS5E5TWnHRBKlfzQvb0XrXLwiJpy5c3CIMcO1GJ76F1UtGyPn6QcAOIoBDqiulYtWgpwicEp0XscDeD2xcrM7TTJf7N1m_A3wklO8Dx0sgSNg-AZQgRp6OoZvKcNVBC9u5ZW4F3NBGdFcY_HTJAOAEujRGWYo128kql9QayCz6fwV42cPHZzyqSscwdA7vI3w2V4R8waSvmAryMOBVBLYxqIAXxHJ8QZcqCnBTJnSqcawYF2VG2K3T0DPkkZJxI_e7CbPnY22OwVTEJLDk1x7XCvt7XudHEku4Ew3e55O6XVaokqcMMMgpmUJ04NSr4hWpVq3lBCkWRZ8ys0S2IwUZnGQiZyTzhq-b8pxObkjBqSj0qbU3o-JctgUS06gfbmCCYVGwHSPc0nLNPr36Snw3kyRkj8MHdlY3OMPanXJAU28xXF-FSP8Jf1TOOK6USE4-w16C2SBCt-jTgyb1sP6h2OTwqM6tVBbmAVhwTIgKz5ckKI_GLROUeUfvDhB9kE-a_njjkQZ6oGdcIC-394UUfHSPlFj5mvg0SenP24qL9PVe07MHjlLSFnRAoMFQ7F1j7zjfbEM3VGq2ck8SZK5kOkgdQU2O_Zk6ZilzXJ3qcvmTkuslf_TcUiqGjUSlwoQ0xFoESzGJfZ5Yg=s266-no?authuser=0",
     "#",
     "#"
   ),
@@ -78,7 +78,7 @@ export default function Proponents() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                    image={proponent.image}
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
