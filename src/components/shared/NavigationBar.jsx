@@ -6,7 +6,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 //import IconButton from "@material-ui/core/IconButton";
 //import MenuIcon from "@material-ui/icons/Menu";
-import { Box } from "@material-ui/core";
+import { Box, Switch } from "@material-ui/core";
 import NavigationDrawer from "./NavigationDrawer";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom'
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NavigationBar() {
+export default function NavigationBar(props) {
   const classes = useStyles();
 
   return (
@@ -42,6 +42,7 @@ export default function NavigationBar() {
           <Box display={{ xs: "none", md: "block" }}>
             {DynamicButton()}
             <Button color="inherit">Download Paper</Button>
+            <Switch onChange={() => props.setDarkMode()}/>
           </Box>
         </div>
       </Toolbar>
