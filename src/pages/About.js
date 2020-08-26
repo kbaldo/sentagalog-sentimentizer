@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { Typography } from "@material-ui/core";
 import Proponents from "../components/About/Proponents";
 import Fade from "@material-ui/core/Fade";
-import Grow from '@material-ui/core/Grow';
+//import Grow from '@material-ui/core/Grow';
 
 export default class Home extends Component {
   render() {
