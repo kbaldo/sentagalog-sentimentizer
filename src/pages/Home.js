@@ -3,11 +3,13 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import TweetField from "../components/Home/TweetField"
 import Title from "../components/Home/Title"
+import Fade from '@material-ui/core/Fade';
 
 export default class Home extends Component {
   render() {
     return (
       <Fragment>
+        <Fade in={true} timeout={500}>
         <Container maxWidth="md">
           <Grid
             container
@@ -22,6 +24,7 @@ export default class Home extends Component {
             <TweetField />
           </Grid>
         </Container>
+        </Fade>
       </Fragment>
     );
   }

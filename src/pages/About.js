@@ -3,6 +3,8 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { Typography } from "@material-ui/core";
 import Proponents from "../components/About/Proponents";
+import Fade from "@material-ui/core/Fade";
+import Grow from '@material-ui/core/Grow';
 
 export default class Home extends Component {
   render() {
@@ -16,39 +18,45 @@ export default class Home extends Component {
             alignItems="flex-start"
             spacing={3}
           >
+            <Fade in={true} timeout={500}>
+              <Grid item xs={12}>
+                <Typography variant="h3" gutterBottom color="primary">
+                  About the Project
+                </Typography>
+                <Typography variant="body1" gutterBottom>
+                  <b>Project Sentagalog</b> is an undergraduate thesis where the
+                  researches aim to develop machine models created in the areas
+                  of <i>Sentiment Analysis</i> and <i>Machine Learning</i>{" "}
+                  through different feature engineering methods and
+                  preprocessing experiments.
+                </Typography>
+                <br />
+                <Typography variant="body1" gutterBottom>
+                  The research pursues to measure and benchmark the performance
+                  of approaches such as{" "}
+                  <i>E-I/OU Respelling, Stemming, and Translation</i> through
+                  the <i>bag-of-words benchmark</i>. It also aims to measure and
+                  benchmark the performance of the{" "}
+                  <i>Emoji Probability Vector</i> approach through the{" "}
+                  <i>emoji-embeddings</i> benchmark.
+                </Typography>
+                <br />
+                <Typography variant="body1" gutterBottom>
+                  The researchers obtain their datasets to explore possible ways
+                  that can improve sentiment analysis for{" "}
+                  <i>Filipino-English tweets</i> through the <i>Twitter API</i>{" "}
+                  where they collect public tweets for the experiments.
+                </Typography>
+              </Grid>
+            </Fade>
+            <Fade in={true} timeout={500}>
             <Grid item xs={12}>
-              <Typography variant="h3" gutterBottom color="primary">
-                About the Project
-              </Typography>
-              <Typography variant="body1" gutterBottom>
-                <b>Project Sentagalog</b> is an undergraduate thesis where the
-                researches aim to develop machine models created in the areas of{" "}
-                <i>Sentiment Analysis</i> and <i>Machine Learning</i> through
-                different feature engineering methods and preprocessing
-                experiments.
-              </Typography>
-              <br />
-              <Typography variant="body1" gutterBottom>
-                The research pursues to measure and benchmark the performance of
-                approaches such as{" "}
-                <i>E-I/OU Respelling, Stemming, and Translation</i> through the{" "}
-                <i>bag-of-words benchmark</i>. It also aims to measure and
-                benchmark the performance of the <i>Emoji Probability Vector</i>{" "}
-                approach through the <i>emoji-embeddings</i> benchmark.
-              </Typography>
-              <br />
-              <Typography variant="body1" gutterBottom>
-                The researchers obtain their datasets to explore possible ways
-                that can improve sentiment analysis for{" "}
-                <i>Filipino-English tweets</i> through the <i>Twitter API</i>{" "}
-                where they collect public tweets for the experiments.
-              </Typography>
-              <br />
-              <Typography variant="h4" gutterBottom color="textPrimary">
-                Proponents
-              </Typography>
+            <Typography variant="h4" gutterBottom color="textPrimary">
+                  Proponents
+                </Typography>
               <Proponents />
             </Grid>
+            </Fade>
           </Grid>
         </Container>
       </Fragment>
