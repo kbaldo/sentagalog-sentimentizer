@@ -55,14 +55,6 @@ const proponents = [
     "#",
     "#"
   ),
-  createData(
-    "John Sixto Santos",
-    "Project Adviser",
-    "Ateneo De Naga University",
-    "#",
-    "#",
-    "#"
-  ),
 ];
 
 export default function Proponents() {
@@ -72,7 +64,7 @@ export default function Proponents() {
     <React.Fragment>
       <div className={classes.contents}>
         <Container>
-          <Grid container spacing={2} justify="left">
+          <Grid container spacing={2} justify="center">
             {proponents.map((proponent) => (
               <Grid item xs={6} sm={4} md={3}>
                 <Card className={classes.card}>
