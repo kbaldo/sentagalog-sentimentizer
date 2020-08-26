@@ -79,6 +79,7 @@ export default function GetSentiment(props) {
         color="primary"
         onClick={handleClickOpen}
         startIcon={<AssessmentIcon />}
+        disabled={props.text === ""}
       >
         Get Sentiment
       </Button>
