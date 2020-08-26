@@ -11,6 +11,34 @@ import CloudDownloadIcon from "@material-ui/icons/CloudDownload";
 import { IconButton, Container } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import AssessmentIcon from "@material-ui/icons/Assessment";
+
+function DynamicButton() {
+  let location = useLocation();
+  if (location.pathname === "/") {
+    return (
+      <Link to="/about" style={{ textDecoration: "none", color: "inherit" }}>
+        <ListItem button>
+          <ListItemIcon>
+            <InfoIcon />
+          </ListItemIcon>
+          <ListItemText>About the Project</ListItemText>
+        </ListItem>
+      </Link>
+    );
+  } else
+    return (
+      <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+        <ListItem button>
+          <ListItemIcon>
+            <AssessmentIcon />
+          </ListItemIcon>
+          <ListItemText>Sentimentizer</ListItemText>
+        </ListItem>
+      </Link>
+    );
+}
 
 const useStyles = makeStyles({
   list: {
@@ -48,14 +76,7 @@ export default function NavigationDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <Link to="/about" style={{ textDecoration: "none", color: "inherit" }}>
-          <ListItem button>
-            <ListItemIcon>
-              <InfoIcon />
-            </ListItemIcon>
-            <ListItemText>About the Project</ListItemText>
-          </ListItem>
-        </Link>
+        {DynamicButton()}
         <ListItem button>
           <ListItemIcon>
             <CloudDownloadIcon />
