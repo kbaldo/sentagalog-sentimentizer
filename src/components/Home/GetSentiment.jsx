@@ -39,7 +39,7 @@ export default function GetSentiment(props) {
 	const onSuccess = (responseData) => {
 		//Logic for this component should the request be successful. Breadcrumbss????
 		console.log("Response : ", responseData);
-		setResponseType(responseData.title);
+		setResponseType(responseData.sentiment);
 		setOpen(true);
 	}
 
