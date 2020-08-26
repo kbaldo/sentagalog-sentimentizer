@@ -9,6 +9,7 @@ import { useTheme } from "@material-ui/core/styles";
 import { Paper } from "@material-ui/core";
 import AssessmentIcon from "@material-ui/icons/Assessment"
 import AxiosInterface from '../../helpers/AxiosInterface'; //Added Import for AxiosInterface
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -81,7 +82,7 @@ export default function GetSentiment(props) {
         variant="contained"
         color="primary"
         onClick={handleClickOpen}
-        startIcon={<AssessmentIcon />}
+        startIcon={requestState === undefined ? <CircularProgress size={24} /> : <AssessmentIcon />}
         disabled={props.text === "" || requestState === undefined ? true : false}
       >
         Get Sentiment
