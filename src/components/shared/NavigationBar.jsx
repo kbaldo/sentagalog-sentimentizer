@@ -9,6 +9,14 @@ import Button from "@material-ui/core/Button";
 import { Box } from "@material-ui/core";
 import NavigationDrawer from "./NavigationDrawer";
 import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom'
+
+function DynamicButton() {
+  let location = useLocation();
+  if (location.pathname === "/") {
+    return <Button color="inherit" component={Link} to={"/about"}>About the Project</Button>;
+  } else return <Button color="inherit" component={Link} to={"/"}>Sentimentizer</Button>;
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,7 +40,7 @@ export default function NavigationBar() {
         <Box display={{ xs: "block", md: "none" }}><NavigationDrawer /></Box>
         <div className={classes.toolbarButtons}>
           <Box display={{ xs: "none", md: "block" }}>
-            <Button color="inherit" component={Link} to={"/about"}>About the Project</Button>
+            {DynamicButton()}
             <Button color="inherit">Download Paper</Button>
           </Box>
         </div>
