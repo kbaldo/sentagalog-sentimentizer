@@ -51,7 +51,7 @@ export default function NavigationBar(props) {
         </Box>
         <div className={classes.toolbarButtons}>
           <Box display={{ xs: "block", md: "none" }}>
-            <Switch onChange={() => props.setDarkMode()} />
+            <Switch onChange={() => props.setDarkMode()} edge="end"/>
           </Box>
           <Box display={{ xs: "none", md: "block" }}>
             {DynamicButton()}
