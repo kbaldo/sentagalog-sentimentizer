@@ -24,6 +24,7 @@ export default function GetSentiment(props) {
   const [responseType, setResponseType] = React.useState("indeterminate");
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const [requestState, setRequestState] = React.useState(false);
 
   const handleClickOpen = () => {
 	//Logic on Button Click (Sending Request). Loading icon???
@@ -40,7 +41,8 @@ export default function GetSentiment(props) {
 		//Logic for this component should the request be successful. Breadcrumbss????
 		console.log("Response : ", responseData);
 		setResponseType(responseData.sentiment);
-		setOpen(true);
+    setOpen(true);
+    setRequestState(true);
 	}
 
 	const onFailure = (errorData) => {
@@ -49,7 +51,8 @@ export default function GetSentiment(props) {
 	}
 
 	const onRequest = () => {
-		//Logic for this component while request is ongoing. Loading icon???
+    //Logic for this component while request is ongoing. Loading icon???
+    setRequestState(undefined);
   }
 
 	//Modify to suit Ian's server
@@ -79,7 +82,7 @@ export default function GetSentiment(props) {
         color="primary"
         onClick={handleClickOpen}
         startIcon={<AssessmentIcon />}
-        disabled={props.text === ""}
+        disabled={props.text === "" || requestState === undefined ? true : false}
       >
         Get Sentiment
       </Button>
