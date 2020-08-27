@@ -95,7 +95,7 @@ export default function GetSentiment(props) {
         message="There was a problem with the network. Try again later."
       >
         <Alert onClose={onCloseAlert} severity="error" variant="filled">
-          There's a problem with the network. Try again later. :(
+          There's a problem with the network. Try again later!
         </Alert>
         </Snackbar>
 
