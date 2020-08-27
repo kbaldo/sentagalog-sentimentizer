@@ -11,7 +11,7 @@ import AssessmentIcon from "@material-ui/icons/Assessment"
 import AxiosInterface from '../../helpers/AxiosInterface'; //Added Import for AxiosInterface
 import CircularProgress from '@material-ui/core/CircularProgress';
 import CloseIcon from '@material-ui/icons/Close';
-
+import Alert from '@material-ui/lab/Alert'
 
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -94,14 +94,11 @@ export default function GetSentiment(props) {
         autoHideDuration={6000}
         onClose={onCloseAlert}
         message="There was a problem with the network. Try again later."
-        action={
-          <React.Fragment>
-            <IconButton size="small" aria-label="close" color="inherit" onClick={onCloseAlert}>
-              <CloseIcon fontSize="small" />
-            </IconButton>
-          </React.Fragment>
-        }
-      />
+      >
+        <Alert onClose={onCloseAlert} severity="error" variant="filled">
+          There's a problem with the network. Try again later.
+        </Alert>
+        </Snackbar>
 
       <Button
         type="submit"
