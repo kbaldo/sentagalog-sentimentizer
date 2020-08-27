@@ -6,11 +6,10 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
-import { Paper, Snackbar, IconButton } from "@material-ui/core";
+import { Paper, Snackbar } from "@material-ui/core";
 import AssessmentIcon from "@material-ui/icons/Assessment"
 import AxiosInterface from '../../helpers/AxiosInterface'; //Added Import for AxiosInterface
 import CircularProgress from '@material-ui/core/CircularProgress';
-import CloseIcon from '@material-ui/icons/Close';
 import Alert from '@material-ui/lab/Alert'
 
 
