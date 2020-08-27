@@ -6,10 +6,13 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
-import { Paper } from "@material-ui/core";
+import { Paper, Snackbar, IconButton } from "@material-ui/core";
 import AssessmentIcon from "@material-ui/icons/Assessment"
 import AxiosInterface from '../../helpers/AxiosInterface'; //Added Import for AxiosInterface
 import CircularProgress from '@material-ui/core/CircularProgress';
+import CloseIcon from '@material-ui/icons/Close';
+
+
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -26,6 +29,7 @@ export default function GetSentiment(props) {
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [requestState, setRequestState] = React.useState(false);
+  const [alertState, setAlertState] = React.useState(false);
 
   const handleClickOpen = () => {
 	//Logic on Button Click (Sending Request). Loading icon???
@@ -47,7 +51,8 @@ export default function GetSentiment(props) {
 	}
 
 	const onFailure = (errorData) => {
-		//Logic for this component should the request be a failure. More breadcrumbs???
+    setAlertState(true);
+    setRequestState(false);
 		console.log("Error : ", errorData);
 	}
 
@@ -70,12 +75,34 @@ export default function GetSentiment(props) {
 
 	const onSubmit = () => {
 		AxiosInterface.SendAsPost(payload, callbacks);
-	}
+  }
+  //API Interaction Code [E]
 
-	//API Interaction Code [E]
+  const onCloseAlert = (event, reason) => {
+    if (reason !== "clickaway") setAlertState(false);
+  };
 
   return (
     <div>
+
+    <Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+        open={alertState}
+        autoHideDuration={6000}
+        onClose={onCloseAlert}
+        message="There was a problem with the network. Try again later."
+        action={
+          <React.Fragment>
+            <IconButton size="small" aria-label="close" color="inherit" onClick={onCloseAlert}>
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          </React.Fragment>
+        }
+      />
+
       <Button
         type="submit"
         fullWidth
@@ -87,6 +114,7 @@ export default function GetSentiment(props) {
       >
         Get Sentiment
       </Button>
+
       <Dialog
         fullScreen={fullScreen}
         open={open}
