@@ -4,7 +4,7 @@ class AxiosInterface
 {
 	SendAsPost(payload, callbacks) //Do-it-all
 	{
-		const serverAddress = `https://jsonplaceholder.typicode.com/postss`;
+		const serverAddress = `https://jsonplaceholder.typicode.com/posts`;
 
 		callbacks.request(payload); //Executed in importing component.
 		axios.post(serverAddress, payload)
