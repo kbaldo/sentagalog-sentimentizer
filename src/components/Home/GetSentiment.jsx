@@ -118,7 +118,7 @@ export default function GetSentiment(props) {
         aria-labelledby="responsive-dialog-title"
       >
         <DialogTitle id="responsive-dialog-title">
-          {"The text uses _" + responseType + "_ language!"}
+          {"The text uses " + responseType + " language!"}
         </DialogTitle>
         <DialogContent>
 		  <Paper variant="outlined" square><div className={classes.contents}>{props.text}</div></Paper>
