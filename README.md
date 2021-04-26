@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sentagalog Sentimentizer is a complimentary sentiment analysis tool for our undergraduate thesis project. You may input a Filipino-English tweet or statement in the textbox and this app will try to analyze whether the text delivers a postive, negative, or neutral message.
 
 ## Available Scripts
 
