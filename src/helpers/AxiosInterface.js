@@ -5,7 +5,8 @@ class AxiosInterface {
     payload,
     callbacks //Do-it-all
   ) {
-    const serverAddress = `https://jsonplaceholder.typicode.com/posts`;
+    //const serverAddress = `https://jsonplaceholder.typicode.com/posts`;
+    const serverAddress = `https://expb-api.herokuapp.com/predict`;
 
     callbacks.request(payload); //Executed in importing component.
     axios
